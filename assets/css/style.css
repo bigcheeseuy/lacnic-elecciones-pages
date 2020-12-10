@@ -4169,8 +4169,8 @@ ul.unstyled, ol.unstyled {
 }
 /* FOOTER */
 .footer {
-	background: none repeat scroll 0 0 #10242d;
-	border-top: 1px solid #10242d;
+	background: none repeat scroll 0 0 white;
+	border-top: 1px solid white;
 	bottom: 0;
 	left: 0;
 	padding: 10px 20px;
@@ -10925,7 +10925,7 @@ body.md-skin {
 		z-index: 2001;
 		position: absolute;
 		width: 185px;
-		background-color: #10242d;
+		background-color: #2f4050;
 		margin-left: 20px;
 		margin-right: 15px;
 		margin-top: 15px;

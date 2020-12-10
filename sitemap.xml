@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/about.html</loc>
+<loc>http://localhost:4000/lacnic-elecciones-pages/about.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/documentacion.html</loc>
+<loc>http://localhost:4000/lacnic-elecciones-pages/documentacion.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/elecciones.html</loc>
+<loc>http://localhost:4000/lacnic-elecciones-pages/elecciones.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>http://localhost:4000/lacnic-elecciones-pages/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/instalacion.html</loc>
+<loc>http://localhost:4000/lacnic-elecciones-pages/instalacion.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/requerimientos.html</loc>
+<loc>http://localhost:4000/lacnic-elecciones-pages/requerimientos.html</loc>
 </url>
 </urlset>

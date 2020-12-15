@@ -5,10 +5,16 @@
     <link href= "/lacnic-elecciones-pages/assets/images/favicon.png"  rel="shortcut icon" />
 
     <title>Instalación</title>
-    <link rel="stylesheet" href="/lacnic-elecciones-pages/assets/css/styles.css">
     <link href="/lacnic-elecciones-pages/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/lacnic-elecciones-pages/assets/css/font-awesome/css/font-awesome.css" rel="stylesheet">
+    
+    <link href="/lacnic-elecciones-pages/assets/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="/lacnic-elecciones-pages/assets/css/animate.css" rel="stylesheet">
     <link href="/lacnic-elecciones-pages/assets/css/style.css" rel="stylesheet">
+	  <link href="/lacnic-elecciones-pages/assets/css/plugins/iCheck/custom.css" rel="stylesheet"> 
+    
+    <link href="/lacnic-elecciones-pages/assets/css/styles.css" rel="stylesheet">  
+    
     
     <script src="/lacnic-elecciones-pages/assets/js/jquery-3.2.1.min.js"></script>
 	  <script src="/lacnic-elecciones-pages/assets/js/bootstrap.min.js"></script>
@@ -26,78 +32,75 @@
 <!-- End Jekyll SEO tag -->
 
   </head>
-  <body>  
+  <body class="top-navigation pace-done">
     <div id="wrapper">
       
       <div id="page-wrapper" class="gray-bg">  
-        <div class="row">
-  <nav class="header-image-white-bg" role="navigation">    
-    <div class="vertical-center">
-      <a href="#">
-        <img 
-          class="text-center" 
-          alt="Lacnic" 
-          src="/lacnic-elecciones-pages/assets/images/logoLACNIC.png" 
-          style="width: 50%">
-      </a>
-    </div>
-    <!--<div class="navbar-form-custom" style="width: 500px"></div>-->
-    <div class="header-container">
-      <div class="header-text-cont">
-       <a class="link-header" href="#">Sistema Elecciones</a>
+        <div id="topBarPublico">  
+  <div class="row border-bottom white-bg">
+    <nav class="navbar navbar-static-top" role="navigation">
+			<div class="navbar-header">
+        <button class="btn btn-primary" type="button" style="border-radius: 0px" onclick="var win = this.ownerDocument.defaultView || this.ownerDocument.parentWindow; if (win == window) { window.location.href='./home'; } ;return false">
+					<img alt="image" class="img" src="/lacnic-elecciones-pages/assets/images/logo.png"> Sistema de Elecciones - LACNIC
+				</button>
       </div>
-    </div>
-
-      
-    
-  </nav>
+      <div class="navbar-collapse collapse" id="navbar">
+				<ul class="nav navbar-top-links navbar-right">
+					<li>
+						<a href="#" id="login">Sistema de Elecciones</a>
+					</li>
+				</ul>	
+				
+			</div>    
+    </nav>
+  </div>     
 </div>
 
         <nav class="navbar-default navbar-static-side" role="navigation">  
-  <ul class="nav" id="side-menu">
+  <ul class="nav-side-menu" id="side-menu">
   
-    <li>
-      <a href="/lacnic-elecciones-pages/" >
+    <li class="li-menu">
+      <a href="/lacnic-elecciones-pages/" class="li-menu">
         <span class="nav-label" >
           Home
         </span>
       </a>
     </li>
   
-    <li>
-      <a href="/lacnic-elecciones-pages/elecciones.html" >
+    <li class="li-menu">
+      <a href="/lacnic-elecciones-pages/elecciones.html" class="li-menu">
         <span class="nav-label" >
           Sistema Elecciones
         </span>
       </a>
     </li>
   
-    <li>
-      <a href="/lacnic-elecciones-pages/requerimientos.html" >
+    <li class="li-menu">
+      <a href="/lacnic-elecciones-pages/requerimientos.html" class="li-menu">
         <span class="nav-label" >
           Requerimientos
         </span>
       </a>
     </li>
   
-    <li>
-      <a href="/lacnic-elecciones-pages/instalacion.html" >
+    <li class="li-menu">
+      <a href="/lacnic-elecciones-pages/instalacion.html" class="li-menu">
         <span class="nav-label current">
           Instalación Ambiente
         </span>
       </a>
     </li>
   
-    <li>
-      <a href="/lacnic-elecciones-pages/documentacion.html" >
+    <li class="li-menu">
+      <a href="/lacnic-elecciones-pages/documentacion.html" class="li-menu">
         <span class="nav-label" >
           Manuales y Documentos
         </span>
       </a>
     </li>
   
-    <li>
-      <a href="/lacnic-elecciones-pages/about.html" >
+    <li class="li-menu">
+      <a href="/lacnic-elecciones-pages/about.html" class="li-menu">
         <span class="nav-label" >
           About
         </span>
@@ -113,22 +116,14 @@
 
         </div>    
         <footer class="footer">
-  <div class="col-md-4">
-    <a class="grey-text" href="#">
-      <img class="text-center img-symbol" alt="Lacnic" src="/lacnic-elecciones-pages/assets/images/simbolo-lacnic.png" >
-    Copyright LACNIC © 2014-2020 
+  <div class="col-md-6">
+    <strong>LACNIC</strong> 2020
+  </div>
+  <div class="col-md-6">
+    <a target="_blank" style="float: right;" href="https://www.lacnic.net/politica-privacidad">
+      Política de privacidad
     </a>
-  </div>
-  <div class="col-md-4 text-center">
-    <a href="#">
-      <img class="text-center img-git" alt="GitHub" src="/lacnic-elecciones-pages/assets/images/GitHub-Mark-Light-120px-plus-grey.png">
-    </a>
-  </div>
-  <div class="col-md-4">    
-    <div class="footer-mail">
-      <a class="link-footer" href="#">lacnic-mail@lacnic.com.uy</a>
-    </div>
-  </div>
+  </div>  
 </footer>
       </div>     
     </div>

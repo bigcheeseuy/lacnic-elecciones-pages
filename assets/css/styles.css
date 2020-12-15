@@ -20,6 +20,8 @@
 
 .grey-text { color: #676a6c; }
 
+.btn-min-width { min-width: 266px; }
+
 .link-footer { float: right; margin-right: 15px; color: #676a6c; font-size: 14px; font-weight: 600; }
 
 .footer-mail { margin-top: 16px; }

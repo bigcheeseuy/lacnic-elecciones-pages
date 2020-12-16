@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link href= "/lacnic-elecciones-pages/assets/images/favicon.png"  rel="shortcut icon" />
 
-    <title>Home</title>
+    <title>Sistema Elecciones</title>
     <link href="/lacnic-elecciones-pages/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/lacnic-elecciones-pages/assets/css/font-awesome/css/font-awesome.css" rel="stylesheet">
     
@@ -19,16 +19,16 @@
     <script src="/lacnic-elecciones-pages/assets/js/jquery-3.2.1.min.js"></script>
 	  <script src="/lacnic-elecciones-pages/assets/js/bootstrap.min.js"></script>
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Home</title>
+<title>Sistema Elecciones</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Home" />
+<meta property="og:title" content="Sistema Elecciones" />
 <meta property="og:locale" content="en_US" />
 <link rel="canonical" href="http://localhost:4000/lacnic-elecciones-pages/" />
 <meta property="og:url" content="http://localhost:4000/lacnic-elecciones-pages/" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Home" />
+<meta property="twitter:title" content="Sistema Elecciones" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/lacnic-elecciones-pages/","headline":"Home","@context":"https://schema.org"}</script>
+{"@type":"WebSite","url":"http://localhost:4000/lacnic-elecciones-pages/","headline":"Sistema Elecciones","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -40,14 +40,14 @@
   <div class="row border-bottom white-bg">
     <nav class="navbar navbar-static-top" role="navigation">
 			<div class="navbar-header">
-        <button class="btn btn-primary btn-min-width" type="button" style="border-radius: 0px" onclick="var win = this.ownerDocument.defaultView || this.ownerDocument.parentWindow; if (win == window) { window.location.href='./home'; } ;return false">
+        <button class="btn btn-primary btn-min-width" type="button" onclick="location.href='http://elecciones-demo.lacnic.net.uy:8080/elecciones/login';" style="border-radius: 0px" >
 					<img alt="image" class="img" src="/lacnic-elecciones-pages/assets/images/logo.png"> Sistema de Elecciones - LACNIC
 				</button>
       </div>
       <div class="navbar-collapse collapse" id="navbar">
 				<ul class="nav navbar-top-links navbar-right">
 					<li>
-						<a href="#" id="login">Sistema de Elecciones</a>
+						<a href=http://elecciones-demo.lacnic.net.uy:8080/elecciones/login id="login">Sistema de Elecciones</a>
 					</li>
 				</ul>	
 				
@@ -68,17 +68,9 @@
     </li>
   
     <li class="li-menu">
-      <a href="/lacnic-elecciones-pages/elecciones.html" class="li-menu">
+      <a href="/lacnic-elecciones-pages/documentacion.html" class="li-menu">
         <span class="nav-label" >
-          Sistema Elecciones
-        </span>
-      </a>
-    </li>
-  
-    <li class="li-menu">
-      <a href="/lacnic-elecciones-pages/requerimientos.html" class="li-menu">
-        <span class="nav-label" >
-          Requerimientos
+          Documentación y Manuales
         </span>
       </a>
     </li>
@@ -86,15 +78,7 @@
     <li class="li-menu">
       <a href="/lacnic-elecciones-pages/instalacion.html" class="li-menu">
         <span class="nav-label" >
-          Instalación Ambiente
-        </span>
-      </a>
-    </li>
-  
-    <li class="li-menu">
-      <a href="/lacnic-elecciones-pages/documentacion.html" class="li-menu">
-        <span class="nav-label" >
-          Manuales y Documentos
+          Requisitos y Configuración
         </span>
       </a>
     </li>
@@ -110,9 +94,15 @@
   </ul>
 </nav>
         <div class="content-page" > 
-          <h1 class="title">Home</h1>
-<h2 class="sub-title">Introducción</h2>
-<p class="paragraph">El sistema de elecciones es una un sistema de eleccionessdfsdfsdfsdf</p>
+          <h1 class="title">Sistema de Elecciones</h1>
+<h2 class="sub-title"> </h2>
+<p class="paragraph">El proyecto Sistema de Elecciones se concibe en Lacnic en el año 2018. Existía una necesidad de sistematizar las elecciones de cargos internos de forma de tener elecciones transparentes, fiables y manteniento el voto secreto. Para asegurar la transparencia del proceso existen auditores que validan y verifican una elección. Debido a la naturaleza distribuida de los usuarios (votantes, administradores, auditores), se decidió que el sistema fuese una aplicación web el cual envía los enlaces de votación por correo con un identificador único. Cada identificador puede ser utilizado una única vez, pero el sistema permite votar por uno o varios cargos, dependendiendo la de configuración de la elección.</p>
+<p class="paragraph">Inicialmente el uso fue exlusivo de Lacnic para la elección de cargos de su comunidad. Luego, al cabo de un tiempo, otras organizaciones aliadas, con necesidades similares, al tomar conocimiento del sistema lo comenzaron a solicitar para sus propias eleciones.
+  En este momento fue que surgió la idea de aperturar el código y disponibilizarlo para que otras comunidades puedan utilizar el sistema y beneficiarse mediante elecciones transparentes y fiables.
+</p>
+<p class="paragraph">
+  En las siguientes secciones se puede encontrar información sobre el repositorio del código fuente, documentación para la instalación y configuracion. También documentos y manuales que permitan guiar al usuario para la creación y administración de elecciones, así también como realizar el proceso de votación, el proceso de auditar.
+</p>
 
         </div>    
         <footer class="footer">

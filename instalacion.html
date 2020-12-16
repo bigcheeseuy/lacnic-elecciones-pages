@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link href= "/lacnic-elecciones-pages/assets/images/favicon.png"  rel="shortcut icon" />
 
-    <title>Instalación</title>
+    <title>Sistema Elecciones</title>
     <link href="/lacnic-elecciones-pages/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/lacnic-elecciones-pages/assets/css/font-awesome/css/font-awesome.css" rel="stylesheet">
     
@@ -19,16 +19,16 @@
     <script src="/lacnic-elecciones-pages/assets/js/jquery-3.2.1.min.js"></script>
 	  <script src="/lacnic-elecciones-pages/assets/js/bootstrap.min.js"></script>
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Instalación</title>
+<title>Sistema Elecciones</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Instalación" />
+<meta property="og:title" content="Sistema Elecciones" />
 <meta property="og:locale" content="en_US" />
 <link rel="canonical" href="http://localhost:4000/lacnic-elecciones-pages/instalacion.html" />
 <meta property="og:url" content="http://localhost:4000/lacnic-elecciones-pages/instalacion.html" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Instalación" />
+<meta property="twitter:title" content="Sistema Elecciones" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://localhost:4000/lacnic-elecciones-pages/instalacion.html","headline":"Instalación","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"http://localhost:4000/lacnic-elecciones-pages/instalacion.html","headline":"Sistema Elecciones","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -40,14 +40,14 @@
   <div class="row border-bottom white-bg">
     <nav class="navbar navbar-static-top" role="navigation">
 			<div class="navbar-header">
-        <button class="btn btn-primary btn-min-width" type="button" style="border-radius: 0px" onclick="var win = this.ownerDocument.defaultView || this.ownerDocument.parentWindow; if (win == window) { window.location.href='./home'; } ;return false">
+        <button class="btn btn-primary btn-min-width" type="button" onclick="location.href='http://elecciones-demo.lacnic.net.uy:8080/elecciones/login';" style="border-radius: 0px" >
 					<img alt="image" class="img" src="/lacnic-elecciones-pages/assets/images/logo.png"> Sistema de Elecciones - LACNIC
 				</button>
       </div>
       <div class="navbar-collapse collapse" id="navbar">
 				<ul class="nav navbar-top-links navbar-right">
 					<li>
-						<a href="#" id="login">Sistema de Elecciones</a>
+						<a href=http://elecciones-demo.lacnic.net.uy:8080/elecciones/login id="login">Sistema de Elecciones</a>
 					</li>
 				</ul>	
 				
@@ -68,17 +68,9 @@
     </li>
   
     <li class="li-menu">
-      <a href="/lacnic-elecciones-pages/elecciones.html" class="li-menu">
+      <a href="/lacnic-elecciones-pages/documentacion.html" class="li-menu">
         <span class="nav-label" >
-          Sistema Elecciones
-        </span>
-      </a>
-    </li>
-  
-    <li class="li-menu">
-      <a href="/lacnic-elecciones-pages/requerimientos.html" class="li-menu">
-        <span class="nav-label" >
-          Requerimientos
+          Documentación y Manuales
         </span>
       </a>
     </li>
@@ -86,15 +78,7 @@
     <li class="li-menu">
       <a href="/lacnic-elecciones-pages/instalacion.html" class="li-menu">
         <span class="nav-label current">
-          Instalación Ambiente
-        </span>
-      </a>
-    </li>
-  
-    <li class="li-menu">
-      <a href="/lacnic-elecciones-pages/documentacion.html" class="li-menu">
-        <span class="nav-label" >
-          Manuales y Documentos
+          Requisitos y Configuración
         </span>
       </a>
     </li>
@@ -110,9 +94,94 @@
   </ul>
 </nav>
         <div class="content-page" > 
-          <h1 class="title">Instalación y Compilación</h1>
-<h2 class="sub-title">Instalación</h2>
-<p class="paragraph">El sistema de elecciones es una un sistema de eleccionessdfsdfsdfsdf</p>
+          <h1 class="title">Requisitos y Configuración</h1>
+<h2 class="sub-title"> </h2>
+<p class="paragraph">A continuación se detallan los pasos y requisitos para instalar y configurar el aplicativo. </p>
+<ol class="paragraph vertical-space">
+  <li><a href="#prerequisitos">Prerequisitos</a></li>
+  <li><a href="#automatico">Armado ambiente automático</a></li>
+  <li><a href="#manual">Armado ambiente manual</a></li>
+
+</ol>
+
+<h3 class="sub-titulo" id="prerequisitos">Prerequisitos</h3>
+<p class="paragraph">El aplicativo puede ser instalado en un servidor windows o linux. Se requieren los sigientes requisitos:</p>
+<ul class="paragraph vertical-space">
+  <li>Java 8</li>
+  <li>Wildfly 20.0.1 con los siguiente módulos:
+    <ul>
+      <li>net.ipresource</li>
+      <li>jxl</li>
+      <li>commons-validator</li>
+    </ul>
+  </li>
+  <li>Postgresql 9.6 o 10.x</li>
+  <li>Maven 3.6</li>
+</ul>
+
+<h3 class="sub-titulo" id="automatico">Armado ambiente automático</h3>
+<p class="paragraph">Actualmente se cuenta con playbooks en Ansible para ejecutar el armado e inicialización del ambiente.</p>
+<p class="paragraph">El mismo se encuentra en el repositorio del código en el repositorio en <a href="https://github.com/LACNIC/elecciones/tree/develop/ansible">Github</a>.</p>
+<p class="paragraph">Archivos para provisionar el sistema Elecciones</p>
+<ul class="paragraph">
+  <li>Provisionamiento del entorno completo: 'install.yaml'</li>
+  <li>Deploy de Elecciones: 'deploy.yaml'</li>
+  <li>Restablecer ambiente de Testing: 'restore-test.yaml'</li>
+</ul>
+<p class="paragraph">Roles</p>
+<ul class="paragraph">
+  <li>'roles/elecciones' para provisionar el sistema Elecciones</li>  
+</ul>
+<p class="paragraph">Ejecutar playbooks</p>
+<ul class="paragraph vertical-space">
+  <li>Provisionamiento del entorno de Testing: ansible-playbook install.yaml -i hosts -l test -u ´usuario´
+    <ul>
+      <li>Hacer deploy ansible-playbook deploy.yaml -i hosts -l test -u ´usuario´</li>
+    </ul>
+  </li>  
+  <li>Provisionamiento del entorno de Producción: ansible-playbook install.yaml -i hosts -l prod -u ´usuario´
+    <ul>
+      <li>Hacer deploy ansible-playbook deploy.yaml -i hosts -l prod -u ´usuario´</li>
+    </ul>
+  </li> 
+  <li>Provisionamiento del entorno Local: ansible-playbook install.yaml -i hosts -l local -u ´usuario´
+    <ul>
+      <li>Hacer deploy ansible-playbook deploy.yaml -i hosts -l local -u ´usuario´</li>
+    </ul>
+  </li> 
+  <li>Restablecer el entorno de Testing: ansible-playbook restore-test.yaml -i hosts -l test -u ´usuario´</li> 
+</ul>
+
+<h3 class="sub-titulo" id="manual">Armado ambiente manual</h3>
+<p class="paragraph">Instalar lo siguientes módulos en Wildfly</p>
+<ul class="paragraph">
+  <li>net.ipresource-1.47</li>
+  <li>jxl-2.6.12</li>
+  <li>org.apache.commons.commons-validator-1.7</li>
+</ul>
+<p class="paragraph">Estos módulos están incluídos en este reporitorio, en la carpeta ansible/roles/elecciones/files/modules/. Para instalarlos en Wildfly basta con copiar los módulos en la raíz de la carpeta $WILDFLY_HOME/modules</p>
+
+<p class="paragraph">Es necesario publicar en Wildfly el driver JDBC de postgreSQL:</p>
+<ul class="paragraph">
+  <li>postgresql-42.2.16.jar</li>
+</ul>
+<p class="paragraph">Para publicarlo basta con copiar el archivo, incluido en la carpeta ansible/roles/elecciones/files/ en $WILDFLY_HOME/standalone/deployments</p>
+
+<p class="paragraph">Realizar un restore de la base de datos vacía en ansible/roles/elecciones/files/db/</p>
+
+<p class="paragraph">Es necesario publicar en Wildfly el datasource de la aplicación, con las credenciales y datos de acceso a la base de datos. Hay un datasource de ejemplo dentro de la carpeta config/ds. Para publicarlo basta con copiar el archivo en $WILDFLY_HOME/standalone/deployments.</p>
+
+<p class="paragraph">Es necesario configurar en Wildfly un usuario de la consola de administración, a través de la cual se hacen los deployments de los proyectos.</p>
+<p class="paragraph">Para crear un usuario utilizar los scripts add-user.bat/add-user.sh ubicados en WILDFLY_HOME/bin.</p>
+
+<p class="paragraph">Para compilar los proyectos se utiliza maven, se pueden configurar los goals clean compile install package en el IDE para compilar y empaquetar los binarios.</p>
+
+<p class="paragraph">Para publicar los proyectos en el Wildfly local (levantado), se utiliza el plugin de wildlfy para maven. Para disparar el deploy (luego del package), ejecutar:</p>
+<ul class="paragraph">
+  <li>mvn wildfly:deploy</li>
+</ul>
+
+
 
         </div>    
         <footer class="footer">

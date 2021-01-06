@@ -47,7 +47,10 @@
       <div class="navbar-collapse collapse" id="navbar">
 				<ul class="nav navbar-top-links navbar-right">
 					<li>
-						<a href=http://elecciones-demo.lacnic.net.uy:8080/elecciones id="login">Sistema de Elecciones</a>
+						<a href=http://elecciones-demo.lacnic.net.uy:8080/elecciones id="login">
+							<i class="fa fa-home"></i>
+							Sistema de Elecciones
+						</a>
 					</li>
 				</ul>	
 				
@@ -55,57 +58,162 @@
     </nav>
   </div>     
 </div>
+       
+        <div style="padding: 1%">        
+          <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+  <div class="col-lg-12">
+    <div class="ibox">
+      <div class="ibox-title">
+        <h1>Requisitos y Configuración</h1>
+      </div>
+      <div class="ibox-content">
+        <p class="paragraph">A continuación se detallan los pasos y requisitos para instalar y configurar el aplicativo. </p>
+        <ol class="paragraph vertical-space">
+          <li><a href="#prerequisitos">Prerequisitos</a></li>
+          <li><a href="#automatico">Armado ambiente automático</a></li>
+          <li><a href="#manual">Armado ambiente manual</a></li>
+          <li><a href="#cicd">Flujo Integración Continua</a></li>        
+        </ol>
+      </div>
+    </div>  
+  </div> 
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox">
+      <div class="ibox-title">
+        <h2 id="prerequisitos">Prerequisitos</h2>
+      </div>
+      <div class="ibox-content">
+        <p class="paragraph">El aplicativo puede ser instalado en un servidor windows o linux. Se requieren los sigientes requisitos:</p>
+        <ul class="paragraph vertical-space">
+          <li>Java 8</li>
+          <li>Wildfly 20.0.1 con los siguiente módulos:
+            <ul>
+              <li><code>net.ipresource</code></li>
+              <li><code>jxl</code></li>
+              <li><code>commons-validator</code></li>
+            </ul>
+          </li>
+          <li>Postgresql 9.6 o 10.x</li>
+          <li>Maven 3.6</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox">
+      <div class="ibox-title">
+        <h2 id="automatico">Armado ambiente automático</h2>
+      </div>
+      <div class="ibox-content">
+        <p class="paragraph">Actualmente se cuenta con playbooks en Ansible para ejecutar el armado e inicialización del ambiente.</p>
+        <p class="paragraph">El mismo se encuentra en el repositorio del código en el repositorio en <a href="https://github.com/LACNIC/elecciones/tree/develop/ansible">Github</a>.</p>
+        <p class="paragraph">Archivos para provisionar el sistema Elecciones</p>
+        <ul class="paragraph">
+          <li>Provisionamiento del entorno completo: <code>install.yaml</code></li>
+          <li>Deploy de Elecciones: <code>deploy.yaml</code></li>
+          <li>Restablecer ambiente de Testing: <code>restore-test.yaml</code></li>
+        </ul>
+        <p class="paragraph">Roles</p>
+        <ul class="paragraph">
+          <li>Provisionamiento del sistema: <code>roles/elecciones</code></li>  
+        </ul>
+        <p class="paragraph">Ejecutar playbooks</p>
+        <ul class="paragraph vertical-space">
+          <li>Provisionamiento del entorno de Testing: 
+            <ul>
+              <li>Instalación: <code>ansible-playbook install.yaml -i hosts -l test -u ´usuario´</code></li>
+              <li>Deploy: <code>ansible-playbook deploy.yaml -i hosts -l test -u ´usuario´</code></li>
+            </ul>
+          </li>  
+          <li>Provisionamiento del entorno de Producción: 
+            <ul>
+              <li>Instalación: <code>ansible-playbook install.yaml -i hosts -l prod -u ´usuario´</code></li>
+              <li>Deploy: <code>ansible-playbook deploy.yaml -i hosts -l prod -u ´usuario´</code></li>
+            </ul>
+          </li> 
+          <li>Provisionamiento del entorno Local: 
+            <ul>
+              <li>Instalación: <code>ansible-playbook install.yaml -i hosts -l local -u ´usuario´</code></li>
+              <li>Deploy: <code>ansible-playbook deploy.yaml -i hosts -l local -u ´usuario´</code></li>
+            </ul>
+          </li> 
+          <li>Restablecer el entorno de Testing: 
+            <ul>
+              <li><code>ansible-playbook restore-test.yaml -i hosts -l test -u ´usuario´</code></li>
+            </ul>
+          </li> 
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox">
+      <div class="ibox-title">
+        <h2 id="manual">Armado ambiente manual</h2>
+      </div>
+      <div class="ibox-content">
+        <p class="paragraph">Instalar lo siguientes módulos en Wildfly</p>
+        <ul class="paragraph">
+          <li><code>net.ipresource-1.47</code></li>
+          <li><code>jxl-2.6.12</code></li>
+          <li><code>org.apache.commons.commons-validator-1.7</code></li>
+        </ul>
+        <p class="paragraph">Estos módulos están incluídos en este reporitorio, en la carpeta <code>ansible/roles/elecciones/files/modules/</code>. Para instalarlos en Wildfly basta con copiar los módulos en la raíz de la carpeta <code>$WILDFLY_HOME/modules</code></p>
 
-        <nav class="navbar-default navbar-static-side" role="navigation">  
-  <ul class="nav-side-menu" id="side-menu">
-  
-    <li class="li-menu">
-      <a href="/lacnic-elecciones-pages/" class="li-menu">
-        <span class="nav-label current">
-          Home
-        </span>
-      </a>
-    </li>
-  
-    <li class="li-menu">
-      <a href="/lacnic-elecciones-pages/documentacion.html" class="li-menu">
-        <span class="nav-label" >
-          Documentación y Manuales
-        </span>
-      </a>
-    </li>
-  
-    <li class="li-menu">
-      <a href="/lacnic-elecciones-pages/instalacion.html" class="li-menu">
-        <span class="nav-label" >
-          Requisitos y Configuración
-        </span>
-      </a>
-    </li>
-  
-    <li class="li-menu">
-      <a href="/lacnic-elecciones-pages/about.html" class="li-menu">
-        <span class="nav-label" >
-          About
-        </span>
-      </a>
-    </li>
-  
-  </ul>
-</nav>
-        <div class="content-page" > 
-          <h1 class="title">Sistema de Elecciones</h1>
-<h2 class="sub-title"> </h2>
-<p class="paragraph">El proyecto Sistema de Elecciones se concibe en Lacnic en el año 2018. Existía una necesidad de sistematizar las elecciones de cargos internos de forma de tener elecciones transparentes, fiables y manteniento el voto secreto. Para asegurar la transparencia del proceso existen auditores que validan y verifican una elección. Debido a la naturaleza distribuida de los usuarios (votantes, administradores, auditores), se decidió que el sistema fuese una aplicación web el cual envía los enlaces de votación por correo con un identificador único. Cada identificador puede ser utilizado una única vez, pero el sistema permite votar por uno o varios cargos, dependendiendo la de configuración de la elección.</p>
-<p class="paragraph">Inicialmente el uso fue exlusivo de Lacnic para la elección de cargos de su comunidad. Luego, al cabo de un tiempo, otras organizaciones aliadas, con necesidades similares, al tomar conocimiento del sistema lo comenzaron a solicitar para sus propias eleciones.
-  En este momento fue que surgió la idea de aperturar el código y disponibilizarlo para que otras comunidades puedan utilizar el sistema y beneficiarse mediante elecciones transparentes y fiables.
-</p>
-<p class="paragraph">
-  En las siguientes secciones se puede encontrar información sobre el repositorio del código fuente, documentación para la instalación y configuracion. También documentos y manuales que permitan guiar al usuario para la creación y administración de elecciones, así también como realizar el proceso de votación, el proceso de auditar.
-</p>
+        <p class="paragraph">Es necesario publicar en Wildfly el driver JDBC de postgreSQL:</p>
+        <ul class="paragraph">
+          <li><code>postgresql-42.2.16.jar</code></li>
+        </ul>
+        <p class="paragraph">Para publicarlo basta con copiar el archivo, incluido en la carpeta <code>ansible/roles/elecciones/files/</code> en <code>$WILDFLY_HOME/standalone/deployments</code></p>
 
-        </div>    
-        <footer class="footer">
+        <p class="paragraph">Realizar un restore de la base de datos vacía en <code>nsible/roles/elecciones/files/db/</code></p>
+
+        <p class="paragraph">Es necesario publicar en Wildfly el datasource de la aplicación, con las credenciales y datos de acceso a la base de datos. Hay un datasource de ejemplo dentro de la carpeta config/ds. Para publicarlo basta con copiar el archivo en <code>$WILDFLY_HOME/standalone/deployments</code>.</p>
+
+        <p class="paragraph">Es necesario configurar en Wildfly un usuario de la consola de administración, a través de la cual se hacen los deployments de los proyectos.</p>
+        <p class="paragraph">Para crear un usuario utilizar los scripts <code>add-user.bat</code>/<code>add-user.sh</code> ubicados en <code>WILDFLY_HOME/bin</code>.</p>
+
+        <p class="paragraph">Para compilar los proyectos se utiliza maven, se pueden configurar los goals clean compile install package en el IDE para compilar y empaquetar los binarios.</p>
+
+        <p class="paragraph">Para publicar los proyectos en el Wildfly local (levantado), se utiliza el plugin de wildlfy para maven. Para disparar el deploy (luego del package), ejecutar:</p>
+        <ul class="paragraph">
+          <li><code>mvn wildfly:deploy</code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox">
+      <div class="ibox-title">
+        <h2 id="cicd">Flujo Integración Continua</h2>
+      </div>
+      <div class="ibox-content">
+        <p class="paragraph">Se configuraron en el repositorio Git un flujos de integración continua hacia el ambiente de test y prod. Los mismos se encuentran definidos en el directorio <code>.github/workflows</code>. Las acciones que gatillan los flujos son la realización de "push" en las siguientes ramas:</p>
+        <ul class="paragraph">
+          <li>develop (test)</li>
+          <li>master (prod)</li>          
+        </ul>
+        <p class="paragraph">En ambos casos el flujo consiste en dos acciones:</p>
+        <ul class="paragraph">
+          <li>Build: baja el código y ejecuta un <code>mvn clean install</code></li>
+          <li>Deploy: obtiene los artefactos generados y realiza un deploy en el servidor indicado medianet un <code>mvn wildfly:deploy-only</code></li>          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>  
+          <footer class="footer">
   <div class="col-md-6">
     <strong>LACNIC</strong> 2020
   </div>
@@ -115,6 +223,7 @@
     </a>
   </div>  
 </footer>
+        </div>        
       </div>     
     </div>
   </body>

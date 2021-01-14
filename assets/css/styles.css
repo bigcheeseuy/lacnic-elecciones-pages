@@ -46,6 +46,10 @@
 
 .sub-titulo { margin-bottom: 10px; font-size: 26px; color: #676a6c; font-weight: 400; font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+.titulo-h4 { margin-top: 5px; margin-bottom: 1rem; color: #676a6c; font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 500; line-height: 1.5; text-align: left; }
+
+.titulo-h3 { margin-top: 7px; margin-bottom: 1rem; color: #676a6c; font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 19px; font-weight: 600; line-height: 1.5; text-align: left; }
+
 .paragraph { margin-top: 0; margin-bottom: 1rem; color: #676a6c; font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5; text-align: left; }
 
 .vertical-space { margin-bottom: 25px; }
